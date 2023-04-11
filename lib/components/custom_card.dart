@@ -2,22 +2,28 @@ import 'package:calculadora_imc/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  final Widget child;
+  Widget child;
+  Color cardColor;
+  void Function()? customOnTap;
 
-  const CustomCard({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+  CustomCard(
+      {super.key,
+      required this.child,
+      this.customOnTap,
+      required this.cardColor});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: kActiveCardColour,
-        borderRadius: BorderRadius.circular(10.0),
+    return GestureDetector(
+      onTap: customOnTap,
+      child: Container(
+        margin: const EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: child,
       ),
-      margin: const EdgeInsets.all(8.0),
-      child: child,
     );
   }
 }

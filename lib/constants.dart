@@ -5,7 +5,7 @@ const kActiveCardColour = Color(0xFF1D1E33);
 const kInactiveCardColour = Color(0xFF111328);
 
 const kLabelTextStyle = TextStyle(
-  fontSize: 20.0,
+  fontSize: 18.0,
   color: Color(0xFF8D8E98),
 );
 

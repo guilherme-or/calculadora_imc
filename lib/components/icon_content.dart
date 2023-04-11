@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
   final IconData icon;
-  final String name;
-  
-  const IconContent({
-    Key? key,
-    required this.icon,
-    required this.name
-  }) : super(key: key);
+  final String label;
+
+  const IconContent({Key? key, required this.icon, required this.label})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,9 @@ class IconContent extends StatelessWidget {
           height: 15.0,
         ),
         Text(
-          name,
+          label,
           style: kLabelTextStyle,
-        ),
+        )
       ],
     );
   }
